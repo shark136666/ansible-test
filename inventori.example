@@ -1,0 +1,23 @@
+
+[db:children]
+main_db
+slave_db
+
+[main_db:children]
+it-project-db-1_srv_main
+
+[slave_db:children]
+it-project-db-1_srv_slave
+
+[it-project-db-1_srv:children]
+it-project-db-1_srv_main
+it-project-db-1_srv_slave
+
+[it-project-db-1_srv_main]
+it-project-db-1         ansible_host=root@127.0.0.1
+
+[it-project-db-1_srv_slave]
+
+it-project-db-1-slave-1 ansible_host=root@127.0.0.1
+
+it-project-db-1-slave-2 ansible_host=root@127.0.0.1
